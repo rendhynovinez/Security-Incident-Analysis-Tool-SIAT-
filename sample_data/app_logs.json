@@ -1,0 +1,24 @@
+{"timestamp": "2023-09-15T10:15:00Z", "source_ip": "192.168.1.100", "event_type": "user_login", "user": "john_doe", "status": "success", "severity": "info"}
+{"timestamp": "2023-09-15T10:16:00Z", "source_ip": "10.0.0.45", "event_type": "login", "user": "admin", "status": "failed", "message": "Invalid credentials", "severity": "medium"}
+{"timestamp": "2023-09-15T10:16:05Z", "source_ip": "10.0.0.45", "event_type": "login", "user": "admin", "status": "failed", "message": "Invalid credentials", "severity": "medium"}
+{"timestamp": "2023-09-15T10:16:10Z", "source_ip": "10.0.0.45", "event_type": "login", "user": "root", "status": "failed", "message": "Invalid credentials", "severity": "medium"}
+{"timestamp": "2023-09-15T10:16:15Z", "source_ip": "10.0.0.45", "event_type": "login", "user": "administrator", "status": "failed", "message": "Invalid credentials", "severity": "medium"}
+{"timestamp": "2023-09-15T10:16:20Z", "source_ip": "10.0.0.45", "event_type": "login", "user": "admin", "status": "failed", "message": "Invalid credentials", "severity": "medium"}
+{"timestamp": "2023-09-15T10:16:25Z", "source_ip": "10.0.0.45", "event_type": "login", "user": "test", "status": "failed", "message": "Invalid credentials", "severity": "medium"}
+{"timestamp": "2023-09-15T10:17:00Z", "source_ip": "192.168.1.101", "event_type": "page_view", "url": "/products", "severity": "info"}
+{"timestamp": "2023-09-15T10:18:00Z", "source_ip": "192.168.1.102", "event_type": "api_call", "url": "/api/users", "method": "GET", "status_code": 200, "severity": "info"}
+{"timestamp": "2023-09-15T10:19:00Z", "source_ip": "45.33.32.156", "event_type": "db_query", "message": "Suspicious query pattern detected", "severity": "high"}
+{"timestamp": "2023-09-15T10:20:00Z", "source_ip": "192.168.1.103", "event_type": "file_access", "user": "service_account", "message": "Large file download", "severity": "info"}
+{"timestamp": "2023-09-15T10:21:00Z", "source_ip": "198.51.100.42", "event_type": "scan_attempt", "message": "Automated scanning tool detected", "severity": "high"}
+{"timestamp": "2023-09-15T10:22:00Z", "source_ip": "192.168.1.104", "event_type": "user_logout", "user": "jane_smith", "severity": "info"}
+{"timestamp": "2023-09-15T10:23:00Z", "source_ip": "203.0.113.50", "event_type": "api_call", "url": "/api/search", "method": "GET", "status_code": 200, "severity": "info"}
+{"timestamp": "2023-09-15T10:23:01Z", "source_ip": "203.0.113.50", "event_type": "api_call", "url": "/api/products", "method": "GET", "status_code": 200, "severity": "info"}
+{"timestamp": "2023-09-15T10:23:02Z", "source_ip": "203.0.113.50", "event_type": "api_call", "url": "/api/users", "method": "GET", "status_code": 200, "severity": "info"}
+{"timestamp": "2023-09-15T10:23:03Z", "source_ip": "203.0.113.50", "event_type": "api_call", "url": "/api/orders", "method": "GET", "status_code": 200, "severity": "info"}
+{"timestamp": "2023-09-15T10:23:04Z", "source_ip": "203.0.113.50", "event_type": "api_call", "url": "/api/inventory", "method": "GET", "status_code": 200, "severity": "info"}
+{"timestamp": "2023-09-15T10:23:05Z", "source_ip": "203.0.113.50", "event_type": "api_call", "url": "/api/reports", "method": "GET", "status_code": 200, "severity": "info"}
+{"timestamp": "2023-09-15T10:23:06Z", "source_ip": "203.0.113.50", "event_type": "api_call", "url": "/api/analytics", "method": "GET", "status_code": 200, "severity": "info"}
+{"timestamp": "2023-09-15T10:23:07Z", "source_ip": "203.0.113.50", "event_type": "api_call", "url": "/api/settings", "method": "GET", "status_code": 200, "severity": "info"}
+{"timestamp": "2023-09-15T10:23:08Z", "source_ip": "203.0.113.50", "event_type": "api_call", "url": "/api/dashboard", "method": "GET", "status_code": 200, "severity": "info"}
+{"timestamp": "2023-09-15T10:23:09Z", "source_ip": "203.0.113.50", "event_type": "api_call", "url": "/api/customers", "method": "GET", "status_code": 200, "severity": "info"}
+

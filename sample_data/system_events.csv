@@ -1,0 +1,14 @@
+timestamp,source_ip,event_type,user,status_code,message,severity
+2023-09-15 10:15:00,192.168.1.100,system_startup,system,0,Server started successfully,info
+2023-09-15 10:16:00,10.0.0.45,authentication,admin,401,Login failed,medium
+2023-09-15 10:16:05,10.0.0.45,authentication,admin,401,Login failed,medium
+2023-09-15 10:16:10,10.0.0.45,authentication,root,401,Login failed,medium
+2023-09-15 10:16:15,10.0.0.45,authentication,administrator,401,Login failed,medium
+2023-09-15 10:16:20,10.0.0.45,authentication,admin,401,Login failed,medium
+2023-09-15 10:17:00,192.168.1.101,file_access,user1,200,Accessed /data/report.pdf,info
+2023-09-15 10:18:00,192.168.1.102,command_execution,admin,200,Executed backup script,info
+2023-09-15 10:19:00,45.33.32.156,privilege_escalation,guest,403,Attempted to access privileged resource,high
+2023-09-15 10:20:00,198.51.100.42,network_scan,unknown,0,Multiple port probes detected,high
+2023-09-15 10:21:00,192.168.1.103,data_transfer,service_acc,200,Downloaded 500MB file,medium
+2023-09-15 10:22:00,192.168.1.104,user_activity,jane_doe,200,Normal activity,info
+
