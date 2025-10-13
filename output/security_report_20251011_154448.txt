@@ -1,0 +1,264 @@
+================================================================================
+SECURITY INCIDENT ANALYSIS REPORT
+================================================================================
+Generated: 2025-10-11 15:44:48
+Total incidents analyzed: 101
+Threats detected: 7
+
+EXECUTIVE SUMMARY
+--------------------------------------------------------------------------------
+Detected 7 security incidents:
+  - Suspicious Activity: 4
+  - Xss: 1
+  - Brute Force: 1
+  - Data Exfiltration: 1
+
+Severity breakdown:
+  - CRITICAL: 2
+  - HIGH: 5
+
+DETAILED FINDINGS
+--------------------------------------------------------------------------------
+
+XSS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finding #1
+Timestamp: 2023-09-15 10:18:45
+Severity: HIGH
+Source IP: 45.33.32.156
+URL: /search?q=<script>alert(1)</script>
+User-Agent: Mozilla/5.0
+
+Detection Logic:
+  Potential XSS attack detected
+
+Related Events Timeline (4 events):
+  1. [10:18:45] http_request: 45.33.32.156
+  2. [10:19:00] db_query: 45.33.32.156
+     Suspicious query pattern detected
+  3. [10:19:00] firewall_deny: 45.33.32.156
+     DENY connection from 45.33.32.156 to 10.0.0.10:445
+  4. [10:19:00] privilege_escalation: 45.33.32.156
+     Attempted to access privileged resource
+
+Next Steps:
+  - Investigate request from 45.33.32.156
+  - Review application for XSS vulnerabilities
+  - Implement Content Security Policy (CSP)
+  - Use proper output encoding
+
+
+SUSPICIOUS ACTIVITY
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finding #1
+Timestamp: 2023-09-15 10:20:15
+Severity: HIGH
+Source IP: 198.51.100.42
+URL: /
+User-Agent: sqlmap/1.4.7
+
+Detection Logic:
+  Attack tool detected: sqlmap/1.4.7
+
+Related Events Timeline (5 events):
+  1. [10:20:00] network_scan: 198.51.100.42
+     Multiple port probes detected
+  2. [10:20:15] http_request: 198.51.100.42
+  3. [10:20:16] http_request: 198.51.100.42
+  4. [10:20:17] http_request: 198.51.100.42
+  5. [10:21:00] scan_attempt: 198.51.100.42
+     Automated scanning tool detected
+
+Next Steps:
+  - Investigate IP 198.51.100.42
+  - Review full logs for additional context
+  - Check for lateral movement attempts
+
+Finding #2
+Timestamp: 2023-09-15 10:20:16
+Severity: HIGH
+Source IP: 198.51.100.42
+URL: /admin
+User-Agent: sqlmap/1.4.7
+
+Detection Logic:
+  Attack tool detected: sqlmap/1.4.7
+
+Related Events Timeline (5 events):
+  1. [10:20:00] network_scan: 198.51.100.42
+     Multiple port probes detected
+  2. [10:20:15] http_request: 198.51.100.42
+  3. [10:20:16] http_request: 198.51.100.42
+  4. [10:20:17] http_request: 198.51.100.42
+  5. [10:21:00] scan_attempt: 198.51.100.42
+     Automated scanning tool detected
+
+Next Steps:
+  - Investigate IP 198.51.100.42
+  - Review full logs for additional context
+  - Check for lateral movement attempts
+
+Finding #3
+Timestamp: 2023-09-15 10:20:17
+Severity: HIGH
+Source IP: 198.51.100.42
+URL: /login
+User-Agent: sqlmap/1.4.7
+
+Detection Logic:
+  Attack tool detected: sqlmap/1.4.7
+
+Related Events Timeline (5 events):
+  1. [10:20:00] network_scan: 198.51.100.42
+     Multiple port probes detected
+  2. [10:20:15] http_request: 198.51.100.42
+  3. [10:20:16] http_request: 198.51.100.42
+  4. [10:20:17] http_request: 198.51.100.42
+  5. [10:21:00] scan_attempt: 198.51.100.42
+     Automated scanning tool detected
+
+Next Steps:
+  - Investigate IP 198.51.100.42
+  - Review full logs for additional context
+  - Check for lateral movement attempts
+
+Finding #4
+Timestamp: 2023-09-15 10:16:00
+Severity: HIGH
+Source IP: 88.99.77.66
+Destination: 10.0.0.10:22
+
+Detection Logic:
+  Port scan detected: 88.99.77.66 accessed 13 different ports in 12 seconds
+
+Related Events Timeline (13 events):
+  1. [10:16:00] firewall_block: 88.99.77.66
+     BLOCK connection from 88.99.77.66 to 10.0.0.10:22
+  2. [10:16:01] firewall_block: 88.99.77.66
+     BLOCK connection from 88.99.77.66 to 10.0.0.10:23
+  3. [10:16:02] firewall_block: 88.99.77.66
+     BLOCK connection from 88.99.77.66 to 10.0.0.10:80
+  4. [10:16:03] firewall_block: 88.99.77.66
+     BLOCK connection from 88.99.77.66 to 10.0.0.10:443
+  5. [10:16:04] firewall_block: 88.99.77.66
+     BLOCK connection from 88.99.77.66 to 10.0.0.10:8080
+  6. [10:16:05] firewall_block: 88.99.77.66
+     BLOCK connection from 88.99.77.66 to 10.0.0.10:3306
+  7. [10:16:06] firewall_block: 88.99.77.66
+     BLOCK connection from 88.99.77.66 to 10.0.0.10:5432
+  8. [10:16:07] firewall_block: 88.99.77.66
+     BLOCK connection from 88.99.77.66 to 10.0.0.10:27017
+  9. [10:16:08] firewall_block: 88.99.77.66
+     BLOCK connection from 88.99.77.66 to 10.0.0.10:6379
+  10. [10:16:09] firewall_block: 88.99.77.66
+     BLOCK connection from 88.99.77.66 to 10.0.0.10:9200
+  11. [10:16:10] firewall_block: 88.99.77.66
+     BLOCK connection from 88.99.77.66 to 10.0.0.10:1433
+  12. [10:16:11] firewall_block: 88.99.77.66
+     BLOCK connection from 88.99.77.66 to 10.0.0.10:3389
+  13. [10:16:12] firewall_block: 88.99.77.66
+     BLOCK connection from 88.99.77.66 to 10.0.0.10:5900
+
+Next Steps:
+  - Investigate IP 88.99.77.66
+  - Review full logs for additional context
+  - Check for lateral movement attempts
+
+
+BRUTE FORCE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finding #1
+Timestamp: 2023-09-15 10:16:00
+Severity: CRITICAL
+Source IP: 10.0.0.45
+User: admin
+
+Detection Logic:
+  Brute force attack: 5 failed attempts from 10.0.0.45 in 20 seconds
+
+Related Events Timeline (18 events):
+  1. [10:16:00] login: 10.0.0.45
+     Invalid credentials
+  2. [10:16:00] authentication: 10.0.0.45
+     Login failed
+  3. [10:16:05] login: 10.0.0.45
+     Invalid credentials
+  4. [10:16:05] authentication: 10.0.0.45
+     Login failed
+  5. [10:16:10] http_request: 10.0.0.45
+  6. [10:16:10] login: 10.0.0.45
+     Invalid credentials
+  7. [10:16:10] authentication: 10.0.0.45
+     Login failed
+  8. [10:16:12] http_request: 10.0.0.45
+  9. [10:16:14] http_request: 10.0.0.45
+  10. [10:16:15] login: 10.0.0.45
+     Invalid credentials
+  11. [10:16:15] authentication: 10.0.0.45
+     Login failed
+  12. [10:16:16] http_request: 10.0.0.45
+  13. [10:16:18] http_request: 10.0.0.45
+  14. [10:16:20] http_request: 10.0.0.45
+  15. [10:16:20] login: 10.0.0.45
+     Invalid credentials
+  16. [10:16:20] authentication: 10.0.0.45
+     Login failed
+  17. [10:16:22] http_request: 10.0.0.45
+  18. [10:16:25] login: 10.0.0.45
+     Invalid credentials
+
+Next Steps:
+  - Block IP 10.0.0.45 temporarily
+  - Review authentication logs for compromised accounts
+  - Enable rate limiting on login endpoints
+  - Consider implementing CAPTCHA or MFA
+
+
+DATA EXFILTRATION
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finding #1
+Timestamp: 2023-09-15 10:21:30
+Severity: CRITICAL
+Source IP: 192.168.1.103
+URL: /api/data
+User-Agent: curl/7.68.0
+
+Detection Logic:
+  Unusually large response: 15.00 MB from 192.168.1.103 (mean: 328.0 KB, Z-score: 6.71)
+
+Related Events Timeline (4 events):
+  1. [10:18:00] firewall_allow: 192.168.1.103
+     ALLOW connection from 192.168.1.103 to 10.0.0.12:80
+  2. [10:20:00] file_access: 192.168.1.103
+     Large file download
+  3. [10:21:00] data_transfer: 192.168.1.103
+     Downloaded 500MB file
+  4. [10:21:30] http_request: 192.168.1.103
+
+Next Steps:
+  - Investigate 192.168.1.103 for unauthorized access
+  - Review data access logs
+  - Check for compromised credentials
+  - Implement DLP (Data Loss Prevention) controls
+
+
+RECOMMENDATIONS
+--------------------------------------------------------------------------------
+• Implement account lockout policies after failed login attempts
+• Deploy Multi-Factor Authentication (MFA)
+• Conduct security code review of web applications
+• Implement Web Application Firewall (WAF)
+• Use input validation and output encoding
+• Review data access controls and permissions
+• Implement Data Loss Prevention (DLP) solutions
+
+General Recommendations:
+• Enable detailed logging for all critical systems
+• Set up real-time alerting for high-severity incidents
+• Conduct regular security training for development teams
+• Perform periodic penetration testing
+• Keep all systems patched and up-to-date
+
+================================================================================
+END OF REPORT
+================================================================================
